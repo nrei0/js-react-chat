@@ -1,0 +1,14 @@
+.messages {
+	text-align: left;
+	margin-bottom: 1em;
+	border: 1px solid #000;
+	padding: 0.5em 0.75em;
+}
+
+.message-username {
+	font-weight: 600;
+}
+
+.message {
+	font-size: 0.75rem;
+}

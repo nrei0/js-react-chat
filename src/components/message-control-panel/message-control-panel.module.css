@@ -1,0 +1,8 @@
+.control-panel {
+	display: block;
+}
+
+.username-field,
+.message-field {
+	margin-right: 1em;
+}
