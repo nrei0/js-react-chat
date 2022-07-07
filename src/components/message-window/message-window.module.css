@@ -9,6 +9,30 @@
 	font-weight: 600;
 }
 
+.message-details {
+	float: right;
+}
+
+.message-time {
+	/* float: right; */
+}
+
+.message-status {
+	/* float: right; */
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+}
+
+.message-status-delivered {
+	background-color: green;
+}
+
+.message-status-sent {
+	background-color: blue;
+}
+
 .message {
 	font-size: 0.75rem;
 }

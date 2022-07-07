@@ -10,46 +10,86 @@ const generateHash = () => {
   return crypto.randomBytes(20).toString("hex");
 };
 
-const MOCKED_MESSAGES = [
+const messagesState = [
   {
     username: "Andrei",
     message: "hello world",
     timestamp: new Date().getTime(),
     id: generateHash(),
+    clientId: Math.random(),
   },
   {
     username: "George",
     message: "hello world",
     timestamp: new Date().getTime(),
     id: generateHash(),
+    clientId: Math.random(),
   },
   {
     username: "Mark",
     message: "hello world",
     timestamp: new Date().getTime(),
     id: generateHash(),
+    clientId: Math.random(),
   },
   {
     username: "Yuri",
     message: "hello world",
     timestamp: new Date().getTime(),
     id: generateHash(),
+    clientId: Math.random(),
   },
   {
     username: "Marc",
     message: "hello world",
     timestamp: new Date().getTime(),
     id: generateHash(),
+    clientId: Math.random(),
   },
 ];
 
 app.use(bodyParser.json());
 
-app.get("/messages", (req, res) => {
+app.post("/messages", (req, res) => {
+  const { messages = [], timestamp } = req.body;
+
+  //   const id = generateHash();
+  //   const timestamp = new Date().getTime();
+
+  messagesState.push(
+    ...messages.map((clientMessage) => ({
+      username: clientMessage.username,
+      message: clientMessage.message,
+      id: generateHash(),
+      clientId: clientMessage.clientId,
+      timestamp: new Date().getTime(),
+    }))
+  );
+
   res.send({
-    messages: MOCKED_MESSAGES,
+    messages: timestamp
+      ? messagesState.filter((message) => message.timestamp >= timestamp)
+      : messagesState,
   });
 });
+
+// app.post("/message", (req, res) => {
+//   const { username, message } = req.body;
+//   const id = generateHash();
+//   const timestamp = new Date().getTime();
+
+//   messagesState.push({
+//     username,
+//     message,
+//     timestamp,
+//     id,
+//   });
+
+//   res.send({
+//     id,
+//     timestamp,
+//   });
+// });
 
 app.listen(port, () => {
   console.log("server started at :" + port);
