@@ -41,6 +41,7 @@ function App() {
     }, 1000);
   }, []);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!loading && !sync) {
       const queueMessages = messageToSendRef.current;
@@ -53,7 +54,7 @@ function App() {
       });
       setSync(true);
     }
-  }, [sync]);
+  });
 
   useEffect(() => {
     if (data && !loading) {
