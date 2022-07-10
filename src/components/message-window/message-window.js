@@ -6,8 +6,9 @@ function MessageWindow(props) {
 
   return (
     <div className={styles.messages}>
-      {messages.map(
-        ({ username, message, timestamp, clientId, status = "sent" }) => {
+      {messages
+        .sort((a, b) => a.timestamp - b.timestamp)
+        .map(({ username, message, timestamp, clientId, status = "sent" }) => {
           const formattedDate = moment(timestamp).format("HH:mm"); // 24h
           const messageStatus = `${styles["message-status"]} ${
             styles[`message-status-${status}`]
@@ -22,8 +23,7 @@ function MessageWindow(props) {
               </div>
             </div>
           );
-        }
-      )}
+        })}
     </div>
   );
 }
