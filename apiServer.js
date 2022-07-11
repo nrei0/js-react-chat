@@ -1,4 +1,3 @@
-// const path = require("path");
 const express = require("express");
 const crypto = require("crypto");
 const bodyParser = require("body-parser");
@@ -53,9 +52,6 @@ app.use(bodyParser.json());
 app.post("/messages", (req, res) => {
   const { messages = [], timestamp } = req.body;
 
-  //   const id = generateHash();
-  //   const timestamp = new Date().getTime();
-
   messagesState.push(
     ...messages.map((clientMessage) => ({
       username: clientMessage.username,
@@ -72,24 +68,6 @@ app.post("/messages", (req, res) => {
       : messagesState,
   });
 });
-
-// app.post("/message", (req, res) => {
-//   const { username, message } = req.body;
-//   const id = generateHash();
-//   const timestamp = new Date().getTime();
-
-//   messagesState.push({
-//     username,
-//     message,
-//     timestamp,
-//     id,
-//   });
-
-//   res.send({
-//     id,
-//     timestamp,
-//   });
-// });
 
 app.listen(port, () => {
   console.log("server started at :" + port);

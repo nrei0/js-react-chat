@@ -13,10 +13,6 @@
 	float: right;
 }
 
-.message-time {
-	/* float: right; */
-}
-
 .message-status {
 	/* float: right; */
 	display: inline-block;
@@ -31,6 +27,10 @@
 
 .message-status-sent {
 	background-color: blue;
+}
+
+.message-status-failed {
+	background-color: red;
 }
 
 .message {
