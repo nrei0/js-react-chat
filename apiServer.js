@@ -2,7 +2,7 @@ const express = require("express");
 const crypto = require("crypto");
 const bodyParser = require("body-parser");
 
-const port = 8001;
+const port = 8080;
 const app = express();
 
 const generateHash = () => {

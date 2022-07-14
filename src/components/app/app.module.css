@@ -1,4 +1,18 @@
 .app {
   text-align: center;
-  padding: 2em;
+  padding: 2em 8em 1em 8em;
+ 
+}
+.container{
+  text-align: center;
+  display:inline;
+  width: 80%;
+}
+.myimage{
+  /* object-fit: cover;
+  width: 320px;
+  height: 180px; */
+  /* background-image: url("/root/dev/chatAndrReact/src/components/pictures/background.jpg");
+  background-size: cover;
+  size:100%,100%; */
 }
