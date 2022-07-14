@@ -1,8 +1,48 @@
 .control-panel {
-	display: block;
+	margin-top: auto;
+	display: flex;
+	flex-direction: column;
+	/* height: 3vh; */
+	background-color: #f29421;
+}
+
+.panel-username,
+.panel-message {
+	display: flex;
+	margin: 0 1rem;
+	/* padding: 0 1rem; */
+}
+
+.panel-message {
+	margin-bottom: 1vh;
+	height: 4vh;
 }
 
 .username-field,
 .message-field {
-	margin-right: 1em;
+	/* margin-right: 1em; */
+	background-color: #ffde3b;
+	outline: none;
+	color: #430f05;
+	/* border-radius: 0.5em; */
+}
+
+.username-field {
+	border-radius: 0.5rem 0.5rem 0rem 0rem;
+	float: left;
+}
+
+.message-field {
+	border-radius: 0rem 0rem 0rem 0.5rem;
+	width: 85vw;
+	
+}
+
+.message-submit {
+	background-color: #ffde3b;
+	color: #430f05;
+	display: block;
+	width: 15vw;
+	border-radius: 0rem 0.5rem 0.5rem 0rem;
+
 }

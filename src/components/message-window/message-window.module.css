@@ -1,20 +1,41 @@
 .messages {
+	
+	display: flex;
+	flex-direction: column;
+
 	text-align: left;
-	margin-bottom: 1em;
-	border: 1px solid #000;
 	padding: 0.5em 0.75em;
+	background-color: #f29421;
+	overflow: auto;
+	min-height: 91%;
 }
 
 .message-username {
 	font-weight: 600;
+	color: #762a10;
+}
+
+.message-text {
+	align-content: flex-start;
 }
 
 .message-details {
-	float: right;
+	margin: auto 0 auto auto;
+	/* margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto; */
+	/* float: right; */
+}
+
+.message-time {
+	color: #762a10;
+	/* float: right; */
+}
+.message-main {
+	flex-direction: column;
 }
 
 .message-status {
-	/* float: right; */
 	display: inline-block;
 	width: 8px;
 	height: 8px;
@@ -29,10 +50,38 @@
 	background-color: blue;
 }
 
-.message-status-failed {
-	background-color: red;
+.message {
+	display: flex;
+	flex-direction: row;
+	/* align-items: flex-start; */
+	min-height: 3.1rem;
+	color: #430f05;
+	background-color: #ffde3b;
+	overflow: auto;
+	margin: 0.3rem;
+	padding: 0.4rem;
+	border-radius: 0.5rem;
+	font-size: 0.75rem;
 }
 
-.message {
-	font-size: 0.75rem;
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f29421 #430f05;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #430f05;
+	border-radius: 0.5em;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #f29421;
+  border-radius: 0.5em;
+  border: 3px solid #430f05;
 }
