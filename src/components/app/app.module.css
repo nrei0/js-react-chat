@@ -1,4 +1,9 @@
 .app {
+  height: 96vh;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  padding: 2em;
+  padding: 2vh 2vw;
+  /* background-color: #b05819; */
+  background-color: #fff3e0;
 }

@@ -15,8 +15,10 @@ function MessageWindow(props) {
           }`;
           return (
             <div key={clientId} className={styles.message}>
-              <span className={styles["message-username"]}>{username}: </span>
-              <span>{message}</span>
+              <div className={styles["message-main"]}>
+                <div className={styles["message-username"]}>{username}: </div>
+                <div className={styles["message-text"]}>{message}</div>
+              </div>
               <div className={styles["message-details"]}>
                 <span className={styles["message-time"]}>{formattedDate} </span>
                 <div className={messageStatus} />

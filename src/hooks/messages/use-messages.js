@@ -21,6 +21,7 @@ const getLastMessagesTimestamp = (messages) => {
 };
 
 export const useMessages = () => {
+  
   const [messages, setMessages] = useState([]);
 
   // The queue for keeping client-side messages are ready to send to server.
