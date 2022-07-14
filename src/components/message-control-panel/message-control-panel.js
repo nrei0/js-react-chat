@@ -26,6 +26,7 @@ function MessageControlPanel(props) {
       ></input>
       <button
         type="submit"
+        className={styles["button-send"]}
         onClick={() => {
           onMessageAdd(username, message);
         }}
